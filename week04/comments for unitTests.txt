@@ -1,0 +1,615 @@
+Of course! I'll explain every line in simple terms and show how they work together in a unit test.
+
+using NUnit.Framework;
+using FeeSystem;
+
+Line 1: using NUnit.Framework;
+Imports the NUnit testing library.
+Gives access to testing features such as:
+[Test]
+[TestFixture]
+Assert.That()
+
+Think of it as:
+
+"Bring in the NUnit tools so I can write tests."
+
+Line 2: using FeeSystem;
+Imports the FeeSystem namespace.
+This allows the test code to access classes inside the FeeSystem project, such as FeeCalculator.
+
+Think of it as:
+
+"Let me use the FeeCalculator class from my application."
+
+[TestFixture]
+
+Line 3: [TestFixture]
+An attribute (special instruction to NUnit).
+Tells NUnit:
+
+"This class contains unit tests."
+
+Without it, NUnit may not recognize the class as a test class.
+
+public class FeeCalculatorTests
+
+Line 4: public class FeeCalculatorTests
+Creates a class named FeeCalculatorTests.
+This class holds all tests related to the FeeCalculator.
+Keywords:
+public = accessible from anywhere.
+class = blueprint/container for code.
+FeeCalculatorTests = custom class name.
+
+Think of it as:
+
+"This is a box that stores tests for FeeCalculator."
+
+{
+
+Line 5: {
+Marks the beginning of the class body.
+Everything inside belongs to the class.
+// Checklist 1
+
+Line 6: Comment
+Comments are ignored by the compiler.
+Used to organize or explain code.
+[Test]
+
+Line 7: [Test]
+Another NUnit attribute.
+Tells NUnit:
+
+"This method is a test case."
+
+When tests run, NUnit executes methods marked with [Test].
+
+public void OutstandingBalance_NoPayments_ReturnsFullFee()
+
+Line 8: Test Method Declaration
+
+This creates a test method.
+
+Breakdown
+public
+
+Visible outside the class.
+void
+
+Doesn't return any value.
+OutstandingBalance_NoPayments_ReturnsFullFee
+
+
+This is the test name.
+
+Reading it naturally:
+
+"OutstandingBalance, when there are no payments, should return the full fee."
+
+This naming style follows:
+
+MethodBeingTested_Condition_ExpectedResult
+
+{
+
+Line 9
+
+Beginning of the test method.
+
+Arrange Phase
+//Arrange
+
+Line 10
+
+Comment showing the Arrange section.
+
+In unit testing, we often follow:
+
+Arrange -> Act -> Assert
+
+Arrange = set up data
+Act = call the method
+Assert = verify results
+var calc = new FeeCalculator();
+
+Line 11
+
+Creates an object of FeeCalculator.
+
+Breakdown
+new FeeCalculator()
+
+Creates a new FeeCalculator object.
+var calc
+
+Stores it in variable calc.
+
+Equivalent code:
+
+FeeCalculator calc = new FeeCalculator();
+
+
+Think of it as:
+
+"Create a FeeCalculator so I can use its methods."
+
+var payments = new List<decimal>();
+
+Line 12
+
+Creates an empty list of payments.
+
+Breakdown
+List<decimal>
+
+A list that stores decimal numbers.
+
+Example:
+
+[100.00, 50.00, 25.00]
+
+
+But right now:
+
+new List<decimal>()
+
+
+creates:
+
+[]
+
+
+an empty list.
+
+Meaning:
+
+"The student has not made any payments."
+
+Act Phase
+//Act
+
+Line 13
+
+Comment indicating the action section.
+
+var result = calc.OutstandingBalance(600m, payments);
+
+Line 14
+
+Calls the method being tested.
+
+Breakdown
+calc.OutstandingBalance(...)
+
+
+Uses the OutstandingBalance() method from the FeeCalculator object.
+
+Parameters:
+
+600m
+
+Total fee = 600.
+m means decimal.
+
+Without m, C# would treat it as another numeric type.
+
+payments
+
+
+Passes the empty payment list.
+
+So effectively:
+
+OutstandingBalance(600, [])
+
+
+Since nobody paid anything, the balance should still be the full fee.
+
+The returned value is stored in:
+
+result
+
+Assert Phase
+//Assert
+
+Line 15
+
+Comment marking verification section.
+
+Assert.That(result, Is.EqualTo(600m));
+
+Line 16
+
+Checks whether the result is what we expect.
+
+Breakdown
+Assert.That(...)
+
+
+Means:
+
+"Verify this condition."
+
+result
+
+
+The actual value returned by the method.
+
+Is.EqualTo(600m)
+
+
+The expected value.
+
+Meaning:
+
+"The answer should be 600."
+
+So NUnit checks:
+
+result == 600m
+
+
+If true ✅
+
+Test Passed
+
+
+If false ❌
+
+Test Failed
+
+
+Example:
+
+result = 600m
+
+
+PASS ✅
+
+Example:
+
+result = 500m
+
+
+FAIL ❌
+
+}
+
+Line 17
+
+End of the test method.
+
+}
+
+Line 18
+
+End of the class.
+
+What is this test actually checking?
+
+Suppose your FeeCalculator contains:
+
+public decimal OutstandingBalance(decimal fee, List<decimal> payments)
+{
+    return fee - payments.Sum();
+}
+
+
+The test does this:
+
+Fee is 600
+Payments list is empty
+Total payment = 0
+Balance = 600 - 0
+Expected result = 600
+
+Therefore:
+
+OutstandingBalance_NoPayments_ReturnsFullFee
+PASS ✅
+
+Visual Flow
+Arrange
+│
+├── Create FeeCalculator
+└── Create empty payment list
+
+Act
+│
+└── OutstandingBalance(600, [])
+
+Assert
+│
+└── Result should equal 600
+
+Success ✅
+
+
+This is a classic Arrange → Act → Assert (AAA) unit test that verifies the OutstandingBalance() method returns the full fee when no payments have been made.
+
+
+
+
+
+
+
+Since you're studying software development, you don't need to know everything about unit testing right away. Focus on the key concepts that lecturers, assignments, and interviews commonly expect.
+
+What is Unit Testing?
+
+A unit test checks that one small piece ("unit") of code works correctly.
+
+For example, if your program has:
+
+public decimal Add(decimal a, decimal b)
+{
+    return a + b;
+}
+
+
+A unit test checks:
+
+Add(2, 3)
+
+
+returns:
+
+5
+
+
+The goal is to find bugs early and make sure code continues working after changes.
+
+The Arrange-Act-Assert Pattern (AAA)
+
+Most unit tests follow this structure:
+
+[Test]
+public void Add_TwoNumbers_ReturnsSum()
+{
+    // Arrange
+    var calc = new Calculator();
+
+    // Act
+    var result = calc.Add(2, 3);
+
+    // Assert
+    Assert.That(result, Is.EqualTo(5));
+}
+
+Arrange
+
+Set up the objects and data needed.
+
+var calc = new Calculator();
+
+Act
+
+Run the method being tested.
+
+var result = calc.Add(2, 3);
+
+Assert
+
+Check the result.
+
+Assert.That(result, Is.EqualTo(5));
+
+Important NUnit Attributes
+[TestFixture]
+
+Marks a class containing tests.
+
+[TestFixture]
+public class CalculatorTests
+{
+}
+
+[Test]
+
+Marks a test method.
+
+[Test]
+public void Add_ReturnsCorrectAnswer()
+{
+}
+
+[SetUp]
+
+Runs before every test.
+
+private Calculator calc;
+
+[SetUp]
+public void Setup()
+{
+    calc = new Calculator();
+}
+
+
+Useful when multiple tests need the same object.
+
+[TearDown]
+
+Runs after every test.
+
+[TearDown]
+public void Cleanup()
+{
+}
+
+
+Used to clean up resources.
+
+Assertions You Should Know
+Equal To
+Assert.That(result, Is.EqualTo(100));
+
+
+Checks values are the same.
+
+True
+Assert.That(isValid, Is.True);
+
+
+Checks value is true.
+
+False
+Assert.That(isValid, Is.False);
+
+
+Checks value is false.
+
+Null
+Assert.That(customer, Is.Null);
+
+
+Checks object is null.
+
+Not Null
+Assert.That(customer, Is.Not.Null);
+
+
+Checks object exists.
+
+Good Test Naming
+
+A common format is:
+
+Method_Condition_ExpectedResult
+
+
+Example:
+
+OutstandingBalance_NoPayments_ReturnsFullFee
+
+
+Meaning:
+
+Part	MeaningOutstandingBalance	Method being tested
+NoPayments	Situation
+ReturnsFullFee	Expected result
+
+More examples:
+
+Add_TwoNumbers_ReturnsSum()
+
+Login_InvalidPassword_ReturnsFalse()
+
+Withdraw_InsufficientFunds_ThrowsException()
+
+Testing Different Scenarios
+
+For your FeeCalculator example, don't test only one case.
+
+Test 1: No payments
+600 fee
+0 paid
+Balance = 600
+
+Test 2: Partial payment
+600 fee
+200 paid
+Balance = 400
+
+Test 3: Full payment
+600 fee
+600 paid
+Balance = 0
+
+Test 4: Multiple payments
+600 fee
+100 + 150 + 50
+Balance = 300
+
+
+A good tester thinks:
+
+"What different situations could happen?"
+
+What Makes a Good Unit Test?
+
+✅ Tests one thing only
+
+Add(2,3)
+
+
+instead of testing many methods together.
+
+✅ Has a clear name
+
+OutstandingBalance_NoPayments_ReturnsFullFee
+
+
+✅ Easy to read
+
+Other people should quickly understand it.
+
+✅ Gives the same result every time
+
+Avoid depending on:
+
+Current date/time
+Internet
+Databases
+User input
+
+unless necessary.
+
+What Is the Purpose of Unit Testing?
+1. Find Bugs
+
+If a method stops working, tests fail.
+
+2. Prevent Regression
+
+Regression means:
+
+You fix one thing and accidentally break another.
+
+Tests catch these mistakes.
+
+3. Improve Confidence
+
+When all tests pass:
+
+Passed: 25
+Failed: 0
+
+
+you can be more confident the code works.
+
+Common Exam or Assignment Questions
+
+You should be able to explain:
+
+What is unit testing?
+
+Unit testing is the process of testing individual units of code, such as methods or functions, to ensure they work correctly.
+
+What is NUnit?
+
+NUnit is a testing framework for .NET applications that allows developers to create and run automated unit tests.
+
+What is Arrange-Act-Assert?
+
+A testing pattern where test data is prepared (Arrange), the method is executed (Act), and the result is verified (Assert).
+
+Why is unit testing important?
+
+It helps detect bugs early, prevents regressions, improves software quality, and makes code easier to maintain.
+
+For Your CMN224 Course
+
+Make sure you understand these 7 things:
+
+What unit testing is.
+Why developers use unit tests.
+Arrange-Act-Assert (AAA).
+[TestFixture] and [Test].
+Assert.That().
+How to write meaningful test names.
+How to test different scenarios (normal, boundary, and error cases).
+
+If you master those seven topics, you'll understand most of the NUnit unit tests you'll see in class and assignments.
