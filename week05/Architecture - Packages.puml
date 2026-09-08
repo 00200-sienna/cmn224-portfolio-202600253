@@ -1,0 +1,21 @@
+@startuml
+package "UI" {
+  [Produce Intake Form]
+  [Reporting Dashboard]
+}
+
+package "Application Logic" {
+  [Intake Service]
+  [Sync Service]
+}
+
+package "Data Access" {
+  [Local SQLite Repository]
+  [Master DB Repository]
+}
+
+[Produce Intake Form] --> [Intake Service]
+[Intake Service] --> [Local SQLite Repository]
+[Sync Service] --> [Master DB Repository]
+[Reporting Dashboard] --> [Master DB Repository]
+@enduml
