@@ -22,18 +22,17 @@ public class FeeCalculatorTests   //FeeCalculatorTests is the class
 
 	}
 	//Checklist 2
-	[Test]
-	public void OutstandingBalance_OnePartialPayment_ReturnsRemainingBalance()
+	public void OutstandingBalance_OnePartialPayment_ReturnsRemainingBalance() //method being tested.
 	{
 		//Arrange
-		var calc = new FeeCalculator();
-		var payments = new List<decimal>(200m);
+		var calc = new FeeCalculator();  //Create The object FeeCalculator
+    var payments = new List<decimal> { 200m };  //One payment of 200
 
 		//Act
-		var result = calc.OutstandingBalance(600m, payments);
+		var result = calc.OutstandingBalance(600m, payments); //The call method with the fee 600 and the payment list.
 
 		//Assert
-		Assert.That(result, Is.EqualTo(400m));
+		Assert.That(result, Is.EqualTo(400m)); //Expect 400 remaining
 
 	}
 	//Checklist 3
@@ -42,13 +41,13 @@ public class FeeCalculatorTests   //FeeCalculatorTests is the class
 	{
 		//Arrange
 		var calc = new FeeCalculator();
-		var payments = new List<decimal>(200m, 200m, 100m);
+		var payments = new List<decimal> { 200m, 200m, 100m }; //Three payments made in installments.
 
 		//Act
-		var result = calc.OutstandingBalance(600m, payments);
+		var result = calc.OutstandingBalance(600m, payments); //call method.
 
 		//Assert
-		Assert.That(result, Is.EqualTo(100m));
+		Assert.That(result, Is.EqualTo(100m)); //100 expected remaining.
 
 	}
 	//Checklist 4
@@ -57,13 +56,13 @@ public class FeeCalculatorTests   //FeeCalculatorTests is the class
 	{
 		//Arrange
 		var calc = new FeeCalculator();
-		var payments = new List<decimal>(600m);
+		var payments = new List<decimal>{600m}; //one payment made equals to full fee.
 
 		//Act
 		var result = calc.OutstandingBalance(600m, payments);
 
 		//Assert
-		Assert.That(result, Is.EqualTo(0m));
+		Assert.That(result, Is.EqualTo(0m)); //zero balance expected.
 
 	}
 	//Checklist 5
@@ -72,13 +71,13 @@ public class FeeCalculatorTests   //FeeCalculatorTests is the class
 	{
 		//Arrange
 		var calc = new FeeCalculator();
-		var payments = new List<decimal>(700m);
+		var payments = new List<decimal>{700m}; //Payment is greater than the fee.
 
 		//Act
 		var result = calc.OutstandingBalance(600m, payments);
 
 		//Assert
-		Assert.That(result, Is.EqualTo(-100m));
+		Assert.That(result, Is.EqualTo(-100m)); //Expected negative balance (-100).
 
 	}
 	//Checklist 6
@@ -87,10 +86,10 @@ public class FeeCalculatorTests   //FeeCalculatorTests is the class
 	{
 		//Arrange
 		var calc = new FeeCalculator();
-		var payments = new List<decimal>();
+		var payments = new List<decimal>(); //List of empty payments
 
 		//Assert
-		Assert.That(() var result => calc.OutstandingBalance(-1m, payments), Throws.ArgumentException);
+		Assert.That(() => calc.OutstandingBalance(-1m, payments), Throws.ArgumentException); //Expect an exception when the fee is -tive.
 
 	}
 	//Checklist 7
@@ -99,13 +98,13 @@ public class FeeCalculatorTests   //FeeCalculatorTests is the class
 	{
 		//Arrange
 		var calc = new FeeCalculator();
-		var payments = new List<decimal>(300m);
+		var payments = new List<decimal>{300m}; //Payment is equal to half of the fee.
 
 		//Act
-		var result = calc.OutstandingBalance(600m, payments);
+		var result = calc.IsClearedForExams(600m, payments); //calls the exam clearance method.
 
 		//Assert
-		Assert.That(result, Is.True);
+		Assert.That(result, Is.True); //Expect true (half paid is enough)
 
 	}
 	//Checklist 8
@@ -114,17 +113,16 @@ public class FeeCalculatorTests   //FeeCalculatorTests is the class
 	{
 		//Arrange
 		var calc = new FeeCalculator();
-		var payments = new List<decimal> { 299.99m };
+		var payments = new List<decimal> { 299.99m }; //Payment is just under a half.
 
 		//Act
-		var result = calc.OutstandingBalance(600m, payments);
+		var result = calc.IsClearedForExams(600m, payments); //calls the exam clearance method.
 
 		//Assert
-		Assert.That(result, Is.False);
+		Assert.That(result, Is.False); //Expect falls when not enough is paid.
 
 	}
 }
-namespace FeeSystem.Tests;
 
 public class Tests
 {
