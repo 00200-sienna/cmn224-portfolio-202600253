@@ -1,0 +1,18 @@
+
+@startuml
+node "Depot Laptop" {
+[Intake App]
+database "Local SQLite"
+}
+
+node "Town Office PC" {
+[The Consolidation Service]
+[Reporting Dashboard]
+database "Master DB"
+}
+
+[Intake App] ..> [Consolidation Service] : USB or 4G when available
+note right of "Depot Laptop"
+Works offline: Intake App continues recording produce even if the power or connectivity is down.
+end note
+@enduml
