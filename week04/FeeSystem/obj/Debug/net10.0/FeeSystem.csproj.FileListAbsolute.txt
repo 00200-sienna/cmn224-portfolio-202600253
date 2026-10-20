@@ -9,3 +9,14 @@ C:\Users\00253\OneDrive - Western Pacific University\cmn224-portfolio-202600253\
 C:\Users\00253\OneDrive - Western Pacific University\cmn224-portfolio-202600253\week04\FeeSystem\obj\Debug\net10.0\refint\FeeSystem.dll
 C:\Users\00253\OneDrive - Western Pacific University\cmn224-portfolio-202600253\week04\FeeSystem\obj\Debug\net10.0\FeeSystem.pdb
 C:\Users\00253\OneDrive - Western Pacific University\cmn224-portfolio-202600253\week04\FeeSystem\obj\Debug\net10.0\ref\FeeSystem.dll
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\bin\Debug\net10.0\FeeSystem.deps.json
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\bin\Debug\net10.0\FeeSystem.dll
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\bin\Debug\net10.0\FeeSystem.pdb
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\FeeSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\FeeSystem.AssemblyInfoInputs.cache
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\FeeSystem.AssemblyInfo.cs
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\FeeSystem.csproj.CoreCompileInputs.cache
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\FeeSystem.dll
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\refint\FeeSystem.dll
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\FeeSystem.pdb
+C:\Users\Avaneesh oti\OneDrive - Western Pacific University (2)\week04\FeeSystem\obj\Debug\net10.0\ref\FeeSystem.dll

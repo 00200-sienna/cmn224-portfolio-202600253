@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj": {}
+    "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj": {
+    "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj",
         "projectName": "FeeSystem.Tests",
-        "projectPath": "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj",
-        "packagesPath": "C:\\Users\\00253\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem.Tests\\obj\\",
+        "projectPath": "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem.Tests\\FeeSystem.Tests.csproj",
+        "packagesPath": "C:\\Users\\Avaneesh oti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\00253\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Avaneesh oti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem\\FeeSystem.csproj": {
-                "projectPath": "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem\\FeeSystem.csproj"
+              "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem\\FeeSystem.csproj": {
+                "projectPath": "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem\\FeeSystem.csproj"
               }
             }
           }
@@ -49,7 +49,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -371,20 +371,20 @@
         }
       }
     },
-    "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem\\FeeSystem.csproj": {
+    "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem\\FeeSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem\\FeeSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem\\FeeSystem.csproj",
         "projectName": "FeeSystem",
-        "projectPath": "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem\\FeeSystem.csproj",
-        "packagesPath": "C:\\Users\\00253\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\00253\\OneDrive - Western Pacific University\\cmn224-portfolio-202600253\\week04\\FeeSystem\\obj\\",
+        "projectPath": "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem\\FeeSystem.csproj",
+        "packagesPath": "C:\\Users\\Avaneesh oti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Avaneesh oti\\OneDrive - Western Pacific University (2)\\week04\\FeeSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\00253\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Avaneesh oti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -412,7 +412,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -434,7 +434,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

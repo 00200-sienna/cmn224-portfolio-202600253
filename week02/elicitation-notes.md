@@ -1,9 +1,20 @@
 CMN224 Software Engineering
 
-#Elicitations
+Name: Sienna Niggea
+
+\#Elicitations
 
 
-#Stakeholders
+
+\#Stakeholders
 
 
-#Requirements
+
+
+
+\#Requirements
+
+
+
+
+
