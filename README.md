@@ -17,7 +17,13 @@ Task 2: Requirements & Estimation Report
 Task 3: Technology Selection Case Study
 Task 4: Design & Modelling Deliverable
 
-Test file
+
+Testing
+To run the unit tests:
+
+dotnet test
+
+
 
 AI Declaration
 
